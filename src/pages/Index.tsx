@@ -38,10 +38,17 @@ const Index = () => {
   const filterLabel =
     filters.size === 0 ? "all" : filters.size === 1 ? Array.from(filters)[0] : "selected";
 
-  const countLabel =
-    invoices.length === 0
-      ? "No invoices"
-      : `There ${invoices.length === 1 ? "is" : "are"} ${invoices.length} total ${invoices.length === 1 ? "invoice" : "invoices"}`;
+  const filterDescriptor =
+    filters.size === 0 ? "total" : filters.size === 1 ? Array.from(filters)[0] : "filtered";
+
+  const countLabel = (() => {
+    const n = filtered.length;
+    if (n === 0) return "No invoices";
+    return `There ${n === 1 ? "is" : "are"} ${n} ${filterDescriptor} ${n === 1 ? "invoice" : "invoices"}`;
+  })();
+
+  const countLabelMobile =
+    filtered.length === 0 ? "No invoices" : `${filtered.length} invoices`;
 
   return (
     <AppShell>
@@ -50,9 +57,7 @@ const Index = () => {
           <h1 className="text-2xl font-bold tracking-tight md:text-4xl">Invoices</h1>
           <p className="mt-1 text-sm text-muted-foreground">
             <span className="hidden md:inline">{countLabel}</span>
-            <span className="md:hidden">
-              {invoices.length === 0 ? "No invoices" : `${invoices.length} invoices`}
-            </span>
+            <span className="md:hidden">{countLabelMobile}</span>
           </p>
         </div>
 
