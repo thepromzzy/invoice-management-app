@@ -2,95 +2,128 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Invoice app design system — inspired by Frontend Mentor invoice app.
+   All colors HSL. Tokens drive both themes. */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 240 27% 98%;
+    --foreground: 231 28% 7%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 231 28% 7%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 231 28% 7%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Indigo brand */
+    --primary: 252 94% 67%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 252 100% 79%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 231 73% 93%;
+    --secondary-foreground: 231 37% 63%;
+    --secondary-hover: 231 67% 99%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 240 27% 98%;
+    --muted-foreground: 231 36% 63%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 231 73% 93%;
+    --accent-foreground: 231 28% 7%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 80% 63%;
+    --destructive-foreground: 0 0% 100%;
+    --destructive-hover: 0 100% 80%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 231 20% 27% / 0.1;
+    --input: 231 20% 36%;
+    --ring: 252 94% 67%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Surfaces */
+    --surface: 0 0% 100%;
+    --surface-elevated: 0 0% 100%;
+    --total-bar: 231 20% 27%;
+    --total-bar-foreground: 0 0% 100%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Status colors */
+    --status-paid: 160 67% 52%;
+    --status-paid-bg: 160 67% 52% / 0.06;
+    --status-pending: 34 100% 50%;
+    --status-pending-bg: 34 100% 50% / 0.06;
+    --status-draft: 231 20% 27%;
+    --status-draft-bg: 231 20% 27% / 0.06;
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Sidebar */
+    --sidebar-background: 231 28% 14%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 252 94% 67%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 231 28% 19%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 231 28% 19%;
+    --sidebar-ring: 252 94% 67%;
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --shadow-elegant: 0 10px 10px -10px hsl(231 38% 45% / 0.10);
+    --shadow-card: 0 10px 10px -10px hsl(231 38% 45% / 0.06);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 233 31% 11%;
+    --foreground: 0 0% 100%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 233 30% 17%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 233 31% 11%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 252 94% 67%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 252 100% 79%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 233 30% 21%;
+    --secondary-foreground: 231 73% 93%;
+    --secondary-hover: 0 0% 100%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 233 30% 17%;
+    --muted-foreground: 231 36% 73%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 233 30% 21%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 80% 63%;
+    --destructive-foreground: 0 0% 100%;
+    --destructive-hover: 0 100% 80%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --border: 233 30% 21%;
+    --input: 233 30% 21%;
+    --ring: 252 94% 67%;
+
+    --surface: 233 30% 17%;
+    --surface-elevated: 233 30% 21%;
+    --total-bar: 233 31% 5%;
+    --total-bar-foreground: 0 0% 100%;
+
+    --status-paid: 160 67% 52%;
+    --status-paid-bg: 160 67% 52% / 0.06;
+    --status-pending: 34 100% 50%;
+    --status-pending-bg: 34 100% 50% / 0.06;
+    --status-draft: 231 73% 93%;
+    --status-draft-bg: 231 73% 93% / 0.06;
+
+    --sidebar-background: 233 30% 17%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 252 94% 67%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 233 30% 21%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 233 30% 21%;
+    --sidebar-ring: 252 94% 67%;
+
+    --shadow-elegant: 0 10px 10px -10px hsl(0 0% 0% / 0.25);
+    --shadow-card: 0 10px 10px -10px hsl(0 0% 0% / 0.25);
   }
 }
 
@@ -98,8 +131,11 @@ All colors MUST be HSL.
   * {
     @apply border-border;
   }
-
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Spartan', system-ui, -apple-system, sans-serif;
+  }
+  h1, h2, h3, h4 {
+    letter-spacing: -0.02em;
   }
 }

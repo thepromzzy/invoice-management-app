@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" fill="none">
+  <ellipse cx="120" cy="180" rx="90" ry="8" fill="hsl(var(--secondary))" opacity="0.5"/>
+  <rect x="50" y="80" width="140" height="80" rx="6" fill="hsl(var(--card))" stroke="hsl(var(--primary))" stroke-width="2"/>
+  <path d="M50 86 L120 130 L190 86" stroke="hsl(var(--primary))" stroke-width="2" fill="none"/>
+  <circle cx="170" cy="60" r="22" fill="hsl(var(--primary))" opacity="0.15"/>
+  <path d="M158 60 L168 70 L184 52" stroke="hsl(var(--primary))" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M30 110 l14 -6 l-2 8 z" fill="hsl(var(--primary))" opacity="0.4"/>
+  <path d="M210 130 l-14 -6 l2 8 z" fill="hsl(var(--primary))" opacity="0.4"/>
+</svg>
