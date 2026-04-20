@@ -218,10 +218,22 @@ export function InvoiceForm({ invoice, onSubmit, onSaveDraft, onCancel, mode }: 
                     <Input {...register(`items.${index}.name`)} aria-invalid={!!itemErr?.name} />
                   </FormField>
                   <FormField label="Qty." hideLabelOnDesktop={index > 0} error={itemErr?.quantity?.message}>
-                    <Input type="number" min={1} step="1" {...register(`items.${index}.quantity`)} aria-invalid={!!itemErr?.quantity} />
+                    <Input
+                      type="number"
+                      min={1}
+                      step="1"
+                      {...register(`items.${index}.quantity`, { valueAsNumber: true })}
+                      aria-invalid={!!itemErr?.quantity}
+                    />
                   </FormField>
                   <FormField label="Price" hideLabelOnDesktop={index > 0} error={itemErr?.price?.message}>
-                    <Input type="number" min={0} step="0.01" {...register(`items.${index}.price`)} aria-invalid={!!itemErr?.price} />
+                    <Input
+                      type="number"
+                      min={0}
+                      step="0.01"
+                      {...register(`items.${index}.price`, { valueAsNumber: true })}
+                      aria-invalid={!!itemErr?.price}
+                    />
                   </FormField>
                   <FormField label="Total" hideLabelOnDesktop={index > 0}>
                     <p className="flex h-12 items-center text-sm font-bold text-muted-foreground">{total.toFixed(2)}</p>
