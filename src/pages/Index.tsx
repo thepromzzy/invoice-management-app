@@ -73,17 +73,18 @@ const Index = () => {
                 <ChevronDown className="h-3 w-3 text-primary" />
               </button>
             </PopoverTrigger>
-            <PopoverContent align="end" className="w-48 rounded-lg p-6 shadow-elegant">
+            <PopoverContent align="end" className="w-48 rounded-lg p-6 shadow-elegant border-0 bg-card">
               <div className="flex flex-col gap-4">
                 {STATUSES.map((s) => (
                   <label
                     key={s}
-                    className="flex cursor-pointer items-center gap-3 text-sm font-bold capitalize"
+                    className="flex cursor-pointer items-center gap-3 text-sm font-bold capitalize transition-opacity hover:opacity-80"
                   >
                     <Checkbox
                       checked={filters.has(s)}
                       onCheckedChange={() => toggleFilter(s)}
                       aria-label={`Filter ${s}`}
+                      className="h-4 w-4 border-0 bg-secondary data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
                     />
                     {s}
                   </label>
