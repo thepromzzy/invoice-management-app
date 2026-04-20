@@ -12,8 +12,8 @@ const addressSchema = z.object({
 const itemSchema = z.object({
   id: z.string(),
   name: z.string().trim().min(1, "can't be empty").max(120),
-  quantity: z.number({ invalid_type_error: "must be a number" }).positive("must be > 0"),
-  price: z.number({ invalid_type_error: "must be a number" }).nonnegative("must be ≥ 0"),
+  quantity: z.number({ message: "must be a number" }).positive("must be > 0"),
+  price: z.number({ message: "must be a number" }).nonnegative("must be ≥ 0"),
   total: z.number().nonnegative(),
 });
 
