@@ -84,7 +84,7 @@ Supports persistence using:
 
 ---
 
-## ⚙️ Installation
+## Installation
 
 Clone the repository:
 
@@ -181,7 +181,7 @@ This project follows accessibility best practices:
 
 ---
 
-## 🧠 Architecture Decisions
+## Architecture Decisions
 
 ### State Management
 Context API was used to manage:
@@ -232,7 +232,7 @@ Possible future improvements:
 ## Live Demo
 
 ```bash
-
+https://invoice-management-app-five.vercel.app/
 ```
 
 ---
